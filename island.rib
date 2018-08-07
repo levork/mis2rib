@@ -1,0 +1,48 @@
+# Moana Island Scene
+# Copyright 2018 Disney Enterprises, Inc. All rights reserved.
+
+Hider "raytrace" "int incremental" [1] "int minsamples" [4] "int maxsamples" [1024]
+Integrator "PxrPathTracer" "default" "int maxPathLength" [8]
+Attribute "trace" "int maxdiffusedepth" [10] "int maxspeculardepth" [10]
+Format 2444 1024 1
+Option "statistics" "int endofframe" [3]
+Option "statistics" "xmlfilename" "island.xml"
+Display "island.tif" "tiff" "rgba"
+Clipping 0.01 1e30
+
+# Uncomment ONE of the following to pick a camera
+#ReadArchive "rib/beachCam.rib"
+#ReadArchive "rib/birdseyeCam.rib"
+#ReadArchive "rib/dunesACam.rib" 
+#ReadArchive "rib/grassCam.rib" 
+#ReadArchive "rib/palmsCam.rib" 
+#ReadArchive "rib/rootsCam.rib"
+ReadArchive "rib/shotCam.rib"
+
+FrameBegin 1
+    WorldBegin
+	ReadArchive "rib/lights.rib"
+	AttributeBegin
+		ReadArchive "rib/isBayCedarA1.rib"
+		ReadArchive "rib/isBeach.rib"
+		ReadArchive "rib/isCoastline.rib"
+		ReadArchive "rib/isCoral.rib"
+		ReadArchive "rib/isDunesA.rib"
+		ReadArchive "rib/isDunesB.rib"
+		ReadArchive "rib/isGardeniaA.rib"
+		ReadArchive "rib/isHibiscus.rib"
+		ReadArchive "rib/isHibiscusYoung.rib"
+		ReadArchive "rib/isIronwoodA1.rib"
+		ReadArchive "rib/isIronwoodB.rib"
+		ReadArchive "rib/isKava.rib"
+		ReadArchive "rib/isLavaRocks.rib"
+		ReadArchive "rib/isMountainA.rib"
+		ReadArchive "rib/isMountainB.rib"
+		ReadArchive "rib/isNaupakaA.rib"
+		ReadArchive "rib/isPalmDead.rib"
+		ReadArchive "rib/isPalmRig.rib"
+		ReadArchive "rib/isPandanusA.rib"
+		ReadArchive "rib/osOcean.rib"
+	AttributeEnd
+    WorldEnd
+FrameEnd
