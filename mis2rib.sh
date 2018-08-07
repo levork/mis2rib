@@ -1,5 +1,11 @@
 #!/bin/sh
 
+echo creating directories
+mkdir -p rib
+
+echo converting texture
+$RMANTREE/bin/txmake -envlatl -resize up- textures/islandsun.exr textures/islandsun.tx
+
 echo converting cameras
 ./mis2rib camera json/cameras/shotCam.json > rib/shotCam.rib
 ./mis2rib camera json/cameras/beachCam.json > rib/beachCam.rib

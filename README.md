@@ -28,7 +28,10 @@ icpc -O3 -std=c++11 -I/include/path/to/boost -I/include/path/to/json.hpp \
 Install mis2rib in the root directory of the island scene package.
 
 From the same directory, run mis2rib.sh. This takes around half an
-hour to generate all necessary RIB files.
+hour to generate all necessary RIB files. It will also run the txmake
+utility to convert the latlong environment map for the domelight from
+EXR to Pixar format, so there will be an assumption that the
+environment variable RMANTREE points to an installation of RenderMan.
 
 You can now render island.rib.
 
