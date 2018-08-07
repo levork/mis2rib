@@ -37,6 +37,7 @@
 #include <boost/filesystem.hpp>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <unordered_map>
 #include "json.hpp"
 
